@@ -28,20 +28,49 @@ $meteors = json_decode($meteors);
             margin:20px;
             display:inline-block;
          }
+         .delete {
+            display:none;
+         }
       </style>
 
    </head>
    <body>
 
       <?php foreach($meteors->data as $meteor): ?>
-      <div class="div" data-country=" " data-date="<?=  $meteor[0] ?>" data-lat ="<?= $meteor[3]?>" data-lon ="<?= $meteor[5]?>">
+      <div class="div <?=  isset($meteor[2]) ? '' : 'delete'  ?> <?=  isset($meteor[8]) ? '' : 'delete'  ?>" data-country=" " data-date="<?=  $meteor[0] ?>" data-lat ="<?= $meteor[3]?>" data-lon ="<?= $meteor[5]?>" data-energie="<?= $meteor[2] ?>" data-velocity="<?=  $meteor[8] ?>" data-masse="<?=  (pow($meteor[8]*1000,2))/$meteor[2] ?>" data-magn ="" >
 
       </div>
       <?php endforeach ?>
 
    </body>
 
-  
+   <!--
+<script>
+
+
+
+var div = document.querySelectorAll('.div')
+console.log(div)
+for ( var i = 0; i<div.length; i++ ) {
+div[i].onclick = function() {
+var that = this
+var data = this.dataset.country
+fetch( 'http://api.population.io:80/1.0/population/'+data+'/2016-12-31/' )
+.then( ( response ) =>
+{
+return response.json()
+} )
+.then( ( result ) =>
+{
+that.innerHTML = result.total_population.population
+
+} ) 
+}
+}
+
+</script>
+
+--> 
 
 
    <script>
@@ -63,7 +92,6 @@ $meteors = json_decode($meteors);
             } )
             .then( ( result ) =>
             {
-               if ( result = 'undefined' ) { return false; }
                return fetch( 'http://api.population.io:80/1.0/population/'+result.countryName+'/2016-12-31/' )
             } )
             .then( ( response ) =>
