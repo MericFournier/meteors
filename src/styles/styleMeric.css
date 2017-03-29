@@ -1,3 +1,7 @@
+body{
+    cursor: url('../images/cursor3.png'), auto;
+}
+
 .left{
     float: left;
 }
@@ -11,6 +15,7 @@
     display:inline-block;
     position:relative;
     z-index: 1;
+    background: rgba(255,255,255, 0.5);
  }
  .delete {
     display:none;

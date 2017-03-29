@@ -1,0 +1,13 @@
+.meteors{
+    cursor: url('../images/cursor3.png'), auto;
+}
+
+/*
+.selected{
+    animation: cursorChange 1s linear infinite;
+}
+
+@keyframes cursorChange{
+    0%{cursor: url('../images/cursor2.png'), auto;}
+    100%{cursor: url('../images/cursor3.png'), auto;}
+}*/

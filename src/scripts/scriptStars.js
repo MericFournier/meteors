@@ -6,57 +6,9 @@ window.requestAnimationFrame = 	window.requestAnimationFrame ||         window.m
 window.onload = function()
 {
 	starfield = new jsStarfield; //appel d'un nouvel objet jsStarfield
-	starfield.init("main_canvas"); //appel de la méthode init de l'objet jsStarfield
-	
-//    //interface pour modifier les valeurs des variables
-//	var gui = new dat.GUI();
-//    
-//    //nombre d'étoile entre 0 et 200 000
-//	gui.add(starfield, 'amount', 0, 200000).onFinishChange(function(value)
-//	{
-//		starfield.set_amount(value);
-//	});
-//    
-//    //vitesse entre 0 et 1500
-//	gui.add(starfield, 'speed', 0, 1500);
-//    
-//    //
-//	gui.add(starfield, 'follow_mouse', 0, 2500).onFinishChange(function(value)
-//	{
-//		if (value === false)
-//			starfield.reset_origin();
-//	})
-//    
-//    //choix entre rects et buffer
-//	gui.add(starfield, 'method', [ 'rects', 'buffer'] );
-	
-    window.addEventListener('wheel', function(event){
-        event.preventDefault();
-        
-        if(roue = new WheelEvent("deltaY") > 0){
-            starfield.speed = 100;
-            starfield.draw_rects();
-            console.log('up');
-        }
-        else{
-            starfield.speed = 100;
-            starfield.draw_back_rects();
-            console.log('down');
-        }
-        
-//        if(starfield.speed == 900){
-//            starfield.speed = 0;
-//            console.log('stop');
-//        }
-//        else{
-//            starfield.speed = 900;
-//            console.log('gooo');
-//        }
-    });
+	starfield.init(); //appel de la méthode init de l'objet jsStarfield
     
-    var syntheticEvent = new WheelEvent("syntheticWheel", {"deltaY": 4, "deltaMode": 0});
-
-console.log(syntheticEvent.deltaY);
+    starfield.speed = 10;
     
     //appel de la fonction de _loop_ qui permet de mettre à jour l'animation
 	_loop_();
@@ -110,7 +62,7 @@ function jsStarfield()
 	this.speed = 0; //propriété vitesse initiale
     
 	this.amount = 1000; //propriété nombre d'étoile au départ
-	
+    
 //	this.follow_mouse = false; //au début les étoiles ne suivent pas la souris
 	this.method = "rects"; //initialisation de la propriété method à rects
 	
@@ -121,23 +73,15 @@ function jsStarfield()
 	
 	this.origin = new Vector2(0, 0); //initialisation d'une position x, y à 0
 	
-	this.init = function(canvas) //initialisation du canvas
+	this.init = function() //initialisation du canvas
 	{
-		this.canvas = document.getElementById(canvas); //récupération du canvas dans le dom
+		this.canvas = document.getElementById('main_canvas'); //récupération du canvas dans le dom
 		this.ctx = this.canvas.getContext('2d'); //on utilise ctx pour dessiner
         
 		this.resize(window.innerWidth, window.innerHeight); //appel de la fonction resize avec comme paramètre la hauteur et la largeur de la fenêtre
 		this.ctx.font="18px Arial";	//nom de la police et sa taille 			
 		
 		this.reset_origin(); //appel de la fonction reset_origin qui repositionne les x et y du nouveau vecteur au milieu de la fenêtre
-		
-        //à chaque fois qu'on bouge la souris on vérifie l'état de la propriété follow_mouse du nouvel objet jsStarfield
-		this.canvas.addEventListener('mousemove', function(event) 
-		{
-            //si l'état est true alors on suit les mouvements de la souris
-			if (starfield.follow_mouse == true) 
-				starfield.set_origin(event.x, event.y);
-		});
 		
 		// clear the array
 		this.stars.length = 0;
@@ -268,40 +212,6 @@ function jsStarfield()
 			this.ctx.fillRect(x, y, size, size);
 		}	
 	};
-	
-//	this.draw_buffer = function()
-//	{
-//		var pos = 0, x, y;
-//        
-//        //taille du tableau des données des pixels
-//		var length = this.img_data.data.length;
-//		var width = this.img_data.width*4;
-//		
-//		for ( pos = 0; pos < length ; pos++ )
-//			this.img_data.data[pos] = 0;
-//		
-//		for (var i=0; i<this.stars.length; i++)
-//		{
-//			var star = this.stars[i];
-//
-//			var k = 256 / star.z;
-//			var x = Math.floor(star.x*k + this.origin.x);
-//			var y = Math.floor(star.y*k + this.origin.y);
-//				
-//			if (x > 0 && x < this.canvas.width && y > 0 && y < this.canvas.height)				
-//			{
-//				pos = y * width + (x*4);
-//				
-//                //on traite les R, G, B, A des pixels du canvas
-//				this.img_data.data[pos] = 255;
-//				this.img_data.data[pos+1] = 255;
-//				this.img_data.data[pos+2] = 255;	
-//				this.img_data.data[pos+3] = ((this.max_depth-star.z)/this.max_depth) * 255; //permet de donner plus ou moins de transparence suivant la profondeur				
-//			}
-//		}	
-//	
-//		this.ctx.putImageData( this.img_data, 0, 0 );
-//	};
 	
     //retranscrire le fps
 	this.draw_fps = function(delta_time)

@@ -1,0 +1,75 @@
+html, body{
+    padding: 0; 
+    margin: 0; 
+/*    background-color: black;*/
+}
+
+#earth_div{
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    position: absolute !important;
+    z-index: 3;
+}
+
+#earth_div canvas{
+    display: block;
+    background: transparent;
+}
+
+#earth_div div:last-child{
+/*    z-index: 1;*/
+}
+
+#earth_div div.satellite{
+    
+}
+
+
+#earth_div div.night{
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    width: 325px;
+    height: 325px;
+    transform: translate(-200px, -200px);
+    border-radius: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    animation: turnAroundNight 10s ease infinite;
+}
+
+@keyframes turnAroundNight{
+    0%{transform: translateX(-500px); z-index:1;}
+    50%{transform: translateX(400px); z-index: 1;}
+    100%{transform: translateX(-500px); z-index:-11;}
+}
+
+#earth_div div.moon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50px, -50px);
+    animation: turnAroundMoon 10s ease infinite;
+}
+
+@keyframes turnAroundMoon{
+    0%{transform: translateX(-250px); z-index:2;}
+    50%{transform: translateX(250px); z-index: 2;}
+    100%{transform: translateX(-250px); z-index:-10;}
+}
+
+#earth_div div.moon img{
+    width: 50px;
+}
+
+/*
+.we-pm-icon{
+    background-image: url("src/images/locatio.png"); 
+    background-size:cover; 
+    width: 10px!important; 
+    height: 10px!important; 
+    margin-left: 0px!important; 
+    margin-top: 0px!important;
+}
+*/
