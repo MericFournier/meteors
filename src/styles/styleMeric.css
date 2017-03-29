@@ -1,0 +1,11 @@
+.div { 
+    width:100px;
+    height:30px;
+    border-radius:20px;
+    border:1px solid black;
+    margin:20px;
+    display:inline-block;
+ }
+ .delete {
+    display:none;
+ }
