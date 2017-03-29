@@ -1,0 +1,257 @@
+body
+{
+   background-image: url(img/space.png);
+   font-family:Helvetica,Arial;
+   font-size:0px;
+   margin:0px;
+   padding:0px;
+}
+
+h2
+{
+   font-family: 'Economica', sans-serif;
+   font-size:14px; 
+   text-transform: uppercase;
+   margin-left: 10px;
+   margin-bottom: 0;
+   color: #fcfcfc;
+
+}
+
+.container
+{
+   width: 100vw;
+   height: 100vh;
+   position: relative;
+}
+
+.side_bar
+{
+   width: 20vw;
+   background: rgba(252, 252, 252, 0.06);
+   font-size:14px;
+
+}
+
+.side_bar .logo
+{
+   background: #6c6562;
+   height: 60px;
+}
+
+.side_bar .line
+{
+   width: 90%;
+   height: 2px;
+   background: #fa4b06;
+   margin: 0 auto;
+   margin-top: 10px;  
+}
+
+.side_bar .try
+{
+   display: flex;
+   flex-direction: row;
+   align-content: space-around;
+   align-items: center;
+   margin:10px auto 5px auto;
+
+}
+
+.data-set 
+{
+   color:#fa5959;
+   font-size:14px;
+}
+
+
+
+.picto 
+{
+   width: 50px;
+}
+
+.side_bar .try .victim_number
+{
+   color: #fa4b06; 
+   font-size: 16px;
+}
+
+.side_bar .try .coordinates
+{
+   color: #fa4b06; 
+   font-size: 16px;
+}
+
+.side_bar .button_compare
+{
+   width: 80%;
+   height: 30px;
+   background: #fcfcfc;
+   border-radius: 5px;
+   color: #fa4b06; 
+   margin: auto;
+   text-align: center;
+   line-height: 30px;
+   text-transform: uppercase;
+}
+
+.side_bar .button_compare:hover
+{
+   background: #fa4b06;
+   color: #fcfcfc; 
+}
+
+.side_bar .title_comparison
+{
+   color: #fa4b06; 
+}
+
+.side_bar .death_reason
+{
+   display: block;
+   width:90%;
+   margin:0 auto;
+   padding:5px 0px;
+   color: #fcfcfc;
+}
+
+.side_bar .death_reason p
+{
+   margin-right: 5px;
+   display:inline-block;
+}
+
+.side_bar .death_reason .picto_death_reason
+{
+   width: 15%;
+   display:inline-block;
+}
+
+/* rangers */ 
+
+input[type="range"] {
+   position: relative;
+   margin-left: 1em;
+   width: 90%;
+   margin:0 auto;
+   background-color:transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+   -webkit-appearance: none;
+}
+input[type=range]:focus {
+   outline: none; 
+}
+input[type=range]::-ms-track {
+   width: 90%;
+   margin:0 auto;
+   cursor: pointer;
+   background: transparent; 
+   border-color: transparent;
+   color: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   margin-top:-3px;
+   border:none;
+   border-radius: 3px !important;
+   background: #c63b3b;
+   cursor: pointer;
+
+}
+input[type=range]::-webkit-slider-runnable-track {
+   width: 100%;
+   height: 10px;
+   cursor: pointer;
+   background: #d03939;
+   border-radius: 1px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+   background: #d03939;
+}
+
+input[type=range]::-moz-range-track {
+   width: 100%;
+   height: 8px;
+   cursor: pointer;
+   background: #d03939;
+   border-radius: 1px;
+}
+
+input[type=range]::-ms-track {
+   width: 100%;
+   height: 8px;
+   cursor: pointer;
+   background: #d03939;
+   border-radius: 1px;
+}
+input[type=range]::-ms-fill-lower {
+   background: #FFFFFF;
+   margin-top:-10px;
+   border: 0.2px solid #010101;
+   border-radius: 2.6px;
+   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-lower {
+   background: #FFFFFF;
+}
+input[type=range]::-ms-fill-upper {
+   background: #FFFFFF;
+   border: 0.2px solid #010101;
+   border-radius: 2.6px;
+   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-upper {
+   background: #367ebd;
+}
+
+
+.meteor { 
+   width:100px;
+   height:100Px;
+   background-color:white;
+   margin:20px;
+   display:inline-block;
+}
+
+
+.space {
+   width:80vw;
+   min-height:100vh;
+}
+.elements_main {
+   display:inline-block;
+   vertical-align:top;
+}
+.delete {
+   display:none;
+}
+#victim_count { color:red; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
