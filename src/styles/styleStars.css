@@ -1,0 +1,14 @@
+html, body {
+    margin:0;
+    padding:0;
+    background-color:#fff;
+}
+
+canvas {
+    display: block;
+    width:500px;
+    height:500px;
+    background:#000;
+    position: absolute;
+    z-index: 0;
+}

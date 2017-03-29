@@ -1,10 +1,16 @@
+.left{
+    float: left;
+}
+
 .div { 
     width:100px;
     height:30px;
     border-radius:20px;
-    border:1px solid black;
+    border:1px solid red;
     margin:20px;
     display:inline-block;
+    position:relative;
+    z-index: 1;
  }
  .delete {
     display:none;
