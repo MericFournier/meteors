@@ -98,12 +98,22 @@ if (!empty($data_saved))
             <div class="line"></div>
          </div>
          <div class="space elements_main">
-            <div id="earth_div"></div>
+            <div id="earth_div">
+                <div class="satellite">
+                    <div class="moon"><img src="src/images/moon.png" alt="Lune"></div>
+<!--                    <div class="night"></div>-->
+                </div>
+            </div>
          </div>
+         
+         <canvas id="main_canvas"></canvas>
+         
       </div>
    </body>
    <script src="http://www.webglearth.com/v2/api.js"></script>
    <script src="src/js/main.js"></script>
+   <script src="src/js/dat.gui.min.js"></script>
+   <script src="src/js/scriptStars.js"></script>
    <!-- <script src="script2.js"></script> -->
    <script>
 
