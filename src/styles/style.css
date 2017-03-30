@@ -346,3 +346,79 @@ input[type=range]:focus::-ms-fill-upper {
 
 #victim_count { color:red; }
 
+/************************
+
+TUTO AREA
+
+************************/
+
+.tuto{
+    position: absolute;
+    z-index: 7;
+    top: 100vh;
+    right: 5vw;
+    height: 370px;
+    transform: translateY(-370px);
+}
+
+.tuto .perso{
+    width: 200px;
+    right: 70px;
+    bottom: 0px;
+    position: absolute;
+    z-index: 2;
+}
+
+.tuto .perso img{
+    width: 200px;
+}
+
+.tuto .messagesTuto{
+    width: 300px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.tuto .messagesTuto p{
+    color: black;
+    display: block;
+    font-size: 14px;
+    position: absolute;
+    z-index: 13px;
+}
+
+.tuto .triangleTuto{
+    opacity: 0.6;
+    position: absolute;
+    z-index: 43;
+}
+
+.tuto .triangleTuto img{
+    width: 60px;
+    height: 60px;
+    margin-top: 150px;
+    margin-left: 50px;
+}
+
+.tuto .understood{
+    width: 150px;
+    height: 40px;
+    border: 2px solid #51909D;
+    position: absolute;
+    z-index: 100;
+    right: 50%;
+    top: 100px;
+    transform: translateX(75px);
+    color: black;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+

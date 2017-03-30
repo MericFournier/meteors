@@ -108,12 +108,24 @@ if (!empty($data_saved))
          
          <canvas id="main_canvas"></canvas>
          
+          <div class="tuto">
+              <div class="perso">
+                  <img src="src/images/astronaut.png" alt="Astronaute">
+              </div>
+              <div class="messagesTuto">
+                  <p></p>
+                  <div class="understood">Passer à la suite</div>
+                  <div class="triangleTuto"><img src="src/images/parole.png" alt="Triangle de discution"></div>
+              </div>
+          </div>
       </div>
+       
    </body>
    <script src="http://www.webglearth.com/v2/api.js"></script>
    <script src="src/js/main.js"></script>
    <script src="src/js/dat.gui.min.js"></script>
    <script src="src/js/scriptStars.js"></script>
+   <script src="src/js/scriptTuto.js"></script>
    <!-- <script src="script2.js"></script> -->
    <script>
 
