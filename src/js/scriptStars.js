@@ -134,7 +134,7 @@ function jsStarfield()
 		else
 			this.draw_buffer();
 			
-		this.draw_fps(delta_time);
+		
 			
 		this.last_frame = time;
 	};	
@@ -227,7 +227,7 @@ function jsStarfield()
 			this.fps_count = 0;
 		}
 		
-		this.ctx.fillText("FPS: " + this.fps, 10, 25);		
+			
 	};
 
 	this.set_origin = function(x, y)

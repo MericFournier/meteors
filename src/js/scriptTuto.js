@@ -2,9 +2,11 @@ var citations = ["Bienvenue sur le site SpaceImpact !",
                  "Grâce au marqueur de localisation orange, tu peux repérer ta position sur la planète.", 
                  "En parcourant le globe terrestre tu pourras voir les nombreux impacts de météorites qui ont touché la terre à partir de 4 janvier 1998. Clique sur un point coloré pour voir les caractéristiques de la météorite.", 
                  "Tu peux maintenant modifier sa masse, sa vélocité ou sa force d’impact et constater le nombre de victime potentiel qu’aurait pu faire la météorite.",
-                 "Compare maintenant le nombre obtenu avec les chiffres de d’autres accidents mortels de 2016."
+                 "Compare maintenant le nombre obtenu avec les chiffres d’autres accidents mortels de 2016."
                 ];
 
+
+// init var
 var afficheMessage;
 var show_text;
 var messageText = document.querySelector(".messagesTuto p");
@@ -24,7 +26,7 @@ for (i=0; i < nb_car; i++) {
 }
 
 var actual_text = 0;
-
+// change message 
 function changeMessage() {
 	messageText.innerHTML = text[actual_text];
 	actual_text++;
@@ -45,6 +47,7 @@ function changeMessage() {
 	}
 }
 
+// display letter one by one
 function randCitation(){
 	chain = citations[current_text];
 	nb_car = chain.length;
@@ -65,14 +68,11 @@ function randCitation(){
 
 }
 
+// launch animation
+
 function textAnime(){
 	randCitation();
 	current_text++;
 }
 
 textAnime();
-
-//var understood = document.querySelector(".messagesTuto .understood");
-//    understood.addEventListener('click', function(){
-//	   afficheMessage = changeMessage();
-//    })

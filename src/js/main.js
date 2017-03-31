@@ -1,61 +1,71 @@
 // reccupérer les éléments du dom 
 
-// range inputs 
+
+// éléments sidebar 
+var sidebar = {};
+sidebar.container = document.querySelector('.side_bar');
+sidebar.elements = {};
+sidebar.elements.logo = sidebar.container.querySelector('.logo');
+sidebar.elements.range = sidebar.container.querySelector('.sideContent');
+sidebar.elements.data = sidebar.container.querySelector('.sideData');
+// inputs range 
 var range = {}; 
-range.container = document.querySelector('.data-range');
+range.container = sidebar.container.querySelector('.data-range');
 range.elements = {};
 range.elements.mass = range.container.querySelector('#rangeMasse');
 range.elements.vel = range.container.querySelector('#rangeVelo');
 range.elements.impact = range.container.querySelector('#rangeImpact');
+range.elements.area = range.container.querySelector('#rangeArea');
+range.elements.impact.fill = range.container.querySelector('.fill_data');
 // texte des inputs 
 range.data_view = {};
 range.data_view.mass = range.container.querySelector('#masseValue');
 range.data_view.vel = range.container.querySelector('#veloValue');
 range.data_view.impact = range.container.querySelector('#impactValue');
-// éléments espace 
-// var space = {};
-// space.container = document.querySelector('.space');
-// space.elements = {}; 
-// space.elements.meteors = space.container.querySelectorAll('.meteor');
-// console.log("yo");
+range.data_view.area = range.container.querySelector('#areaValue');
+range.data_view.blesses = range.container.querySelector('#victimes');
+range.data_view.morts = range.container.querySelector('#morts');
 //Data elements compare
-data_select = {}; 
-data_select.container = document.querySelector('.data_selected');
-data_select.elements = {};
-data_select.elements.population = data_select.container.querySelector('#victim_count');
+//data_select = {}; 
+//data_select.container = document.querySelector('.data_selected');
+//data_select.elements = {};
+//data_select.elements.population = data_select.container.querySelector('#victim_count');
+//  System 
+var space = {};
+space.container = document.querySelector('.space');
 
 function modify_value()
 {
-   range.data_view.mass.innerHTML = mass;
-   range.data_view.vel.innerHTML = vel;
-   range.data_view.impact.innerHTML = impact;
-   
-   var factor = 100;
-   
-   range.elements.mass.setAttribute("max",(mass*factor));
-   range.elements.vel.setAttribute("max",(vel*factor));
-   range.elements.impact.setAttribute("max",(impact*factor));
-   
-   range.elements.mass.setAttribute("min",(mass*-factor));
-   range.elements.vel.setAttribute("min",(vel*-factor));
-   range.elements.impact.setAttribute("min",(impact*-factor));
-   
-   
-   range.elements.mass.setAttribute("value",mass);
-   range.elements.vel.setAttribute("value",vel);
-   range.elements.impact.setAttribute("value",impact);
-   // getCountry(lat,lon); 
-
-   // actualiser les valeurs des textes des inputs 
-   range.elements.mass.addEventListener('input',function(){
-      range.data_view.masse.innerHTML = this.value;
-   }); 
-   range.elements.vel.addEventListener('input',function(){
-      range.data_view.velo.innerHTML = this.value;
-   }); 
-   range.elements.impact.addEventListener('input',function(){
-      range.data_view.impact.innerHTML = this.value;
-   });
+//   range.data_view.mass.innerHTML = mass;
+//   range.data_view.vel.innerHTML = vel;
+//   range.data_view.impact.innerHTML = impact;
+//   
+//   var factor = 100;
+//   
+//   range.elements.mass.setAttribute("max",(mass*factor));
+//   range.elements.vel.setAttribute("max",(vel*factor));
+//   range.elements.impact.setAttribute("max",(impact*factor));
+//   
+//   range.elements.mass.setAttribute("min",(mass*-factor));
+//   range.elements.vel.setAttribute("min",(vel*-factor));
+//   range.elements.impact.setAttribute("min",(impact*-factor));
+//   
+//   
+//   range.elements.mass.setAttribute("value",mass);
+//   range.elements.vel.setAttribute("value",vel);
+//   range.elements.impact.setAttribute("value",impact);
+//   // getCountry(lat,lon); 
+//
+//   // actualiser les valeurs des textes des inputs 
+//   range.elements.mass.addEventListener('input',function(){
+//      range.data_view.masse.innerHTML = this.value;
+//   }); 
+//   range.elements.vel.addEventListener('input',function(){
+//      range.data_view.velo.innerHTML = this.value;
+//   }); 
+//   range.elements.impact.addEventListener('input',function(){
+//      range.data_view.impact.innerHTML = this.value;
+//   });
 }
 
 // // charger les météorites 

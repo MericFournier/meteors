@@ -1,148 +1,137 @@
+/** general settings **/
+
 body
 {
-/*	background-image: url(../images/space.png);*/
-	font-family:Helvetica,Arial;
-	font-size:0px;
-	margin:0px;
-	padding:0px;
+   background-image: url(../images/space.png);
+   font-family:Helvetica,Arial;
+   font-size:0px;
+   margin:0px;
+   padding:0px;
+   user-select :none;
 }
 
 /** hide copyright **/
 
 span.cesium-credit-textContainer
 {
-	display: none;
+   display: none;
 }
 
-div.space{
-    position: absolute;
-    z-index: 3;
-    width: 100vw;
-    height: 100vh;
-}
 #earth_div
 {
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	position: absolute !important;
-	z-index: 0;	
-}
-
-#earth_div canvas{
-    display: block;
-    background: transparent;
-    width: 100vw;
-    height: 100vh;
-}
-
-#earth_div div.night{
-    position: absolute;
-    top: 26%;
-    left: 40%;
-    width: 200px;
-    height: 200px;
-    transform: translate(-200px, -200px);
-    border-radius: 200px;
-    background: rgba(0, 0, 0, 0.3);
-    animation: turnAroundNight 10s ease-out infinite;
-}
-
-@keyframes turnAroundNight{
-    0%{transform: translateX(-500px); z-index:1;}
-    50%{transform: translateX(400px); z-index: 1;}
-    100%{transform: translateX(-500px); z-index:-11;}
-}
-
-#earth_div div.moon{
-    position: absolute;
-    top: 50%;
-    left: 48%;
-    transform: translate(-50px, -50px);
-    animation: turnAroundMoon 10s ease infinite;
-}
-
-@keyframes turnAroundMoon{
-    0%{transform: translateX(-250px); z-index:2;}
-    50%{transform: translateX(250px); z-index: 2;}
-    100%{transform: translateX(-250px); z-index:-10;}
-}
-
-#earth_div div.moon img{
-    width: 50px;
-}
-
-div.container > canvas{
-    display: block;
-    width:500px;
-    height:500px;
-    background:#000;
-    position: absolute;
-    z-index: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   position: absolute !important;
+   z-index: 0;	
 }
 
 /** handle locate point on earth **/
 
 .we-pm-icon.meteor_location
 {
-	width: 10px!important;
-	height: 10px!important;
-	margin-left: 0px!important;
-	margin-top: 0px!important;
+   width: 10px!important;
+   height: 10px!important;
+   margin-left: 0px!important;
+   margin-top: 0px!important;
+   z-index: 10;
 }
 
 .we-pm-icon.current_location
 {
-	width: 60px!important;
-	height: 60px!important;
-	margin-left: -30px!important;
-	margin-top: -40px!important;
-	background-size: cover;
+   width: 60px!important;
+   height: 60px!important;
+   margin-left: -30px!important;
+   margin-top: -40px!important;
+   background-size: cover;
 }
 
 .locate_circle
 {
-	position: relative;
-	width: 10px;
-	height: 10px;
-	background-color: #ee7a44;
-	border-radius: 100%;
-	transition: all 0.5s ease-in-out;
-	cursor: pointer;
+   position: relative;
+   width: 10px;
+   height: 10px;
+   background-color: #ee7a44;
+   border-radius: 100%;
+   transition: all 0.5s ease-in-out;
+   cursor: pointer;
 }	
 
 .locate_second
 {
-	position: absolute;
-	left: 50%;
-  	top: 50%;
-  	width: 40px;
-  	height: 40px;
-	transform: translate(-50%, -50%);
-	opacity: 0;
-	background-color: transparent;
-	transition: opacity 0.3s ease-in-out;
-	border-radius: 100%;
-	border: 3px dotted #ee7a44;
-	z-index: 10;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   width: 40px;
+   height: 40px;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   background-color: transparent;
+   transition: opacity 0.3s ease-in-out;
+   border-radius: 100%;
+   border: 3px dotted #ee7a44;
 }
 
-.locate_second_ring
+.layer_ring
 {
-    z-index: -2!important;
+   z-index: 0!important;
 }
 
 /*side bar*/
 
-h2
+.sideContent h2
 {
    font-family: 'Economica', sans-serif;
-   font-size:14px; 
+   font-size:16px; 
+   font-weight: 400;
    text-transform: uppercase;
-   margin-left: 10px;
-   margin-bottom: 0;
-   color: #fcfcfc;
+   margin-top: 20px;
+   margin-bottom: 15px;
+   color: #fefefe;
+}
+p {
+   color:white;
+   font-size:15px;
+}
+
+.sideContent h3
+{
+   font-family: 'PT Sans', sans-serif;
+   font-size:14px; 
+   font-weight: 400;
+   color: #ee7a44;
+}
+
+.sideContent ul
+{
+   padding: 0px;
+}
+
+.sideContent ul li
+{
+
+}
+
+.sideContent ul li img
+{
+   width: 40px;
+   height: auto;
+}
+
+.sideContent ul li span
+{
+   color: #fefefe;
+   font-family: 'PT Sans', sans-serif;
+   font-size:13px; 
+   font-weight: 400;
+}
+
+.data-range
+{
+   background: rgba(0, 0, 0, 0.75);
+   padding-left: 15px;
+   padding-right: 15px;
 }
 
 .container
@@ -154,8 +143,10 @@ h2
 
 .side_bar
 {
-   width: 20vw;
-   background: rgba(252, 252, 252, 0.06);
+   width: 300px;
+   height: 100vh;
+   max-height: 100vh;
+   overflow: visible;
    font-size:14px;
    position: absolute;
    top: 0;
@@ -165,17 +156,29 @@ h2
 
 .side_bar .logo
 {
-   background: #6c6562;
+   padding-top:20px;
    height: 60px;
+}
+
+.side_bar .logo img
+{
+   width: 280px;
+   height: auto;
+   margin: auto 10px;
 }
 
 .side_bar .line
 {
-   width: 90%;
+   width: 100%;
    height: 2px;
-   background: #fa4b06;
-   margin: 0 auto;
-   margin-top: 10px;  
+   background: #fefefe;
+   margin: 0px auto;
+   margin-top: 25px;
+}
+
+.side_bar .line:first-child
+{
+   width: 270px; 
 }
 
 .side_bar .try
@@ -189,8 +192,10 @@ h2
 
 .data-set 
 {
-   color:#fa5959;
-   font-size:14px;
+   color:#ee7a44;
+   font-size:16px;
+   font-family: 'Economica', sans-serif;
+   font-weight: bold;
 }
 
 .picto 
@@ -200,25 +205,30 @@ h2
 
 .side_bar .try .victim_number
 {
-   color: #fa4b06; 
+   color: #ee7a44; 
    font-size: 16px;
+   font-family: 'Economica', sans-serif;
+   font-weight: bold;
+
 }
 
 .side_bar .try .coordinates
 {
-   color: #fa4b06; 
+   color: #ee7a44; 
    font-size: 16px;
+   font-family: 'Economica', sans-serif;
+   font-weight: bold;
 }
 
 .side_bar .title_comparison
 {
-   color: #fa4b06; 
+   color: #ee7a44; 
 }
 
 .side_bar .death_reason
 {
    display: block;
-   width:90%;
+   width:100%;
    margin:0 auto;
    padding:5px 0px;
    color: #fcfcfc;
@@ -236,92 +246,61 @@ h2
    display:inline-block;
 }
 
-/* rangers */ 
+/* design input range */ 
 
-input[type="range"] {
-   position: relative;
-   margin-left: 1em;
-   width: 90%;
-   margin:0 auto;
-   background-color:transparent;
+input[type=range] {
+   -webkit-appearance: none;
+   width: 100%;
+   margin: 0 auto;
+   height: 5px;
+}
+input[type=range]:focus {
+   outline: none;
 }
 
 input[type=range]::-webkit-slider-thumb {
-   -webkit-appearance: none;
-}
-
-input[type=range]:focus {
-   outline: none; 
-}
-
-input[type=range]::-ms-track {
-   width: 90%;
-   margin:0 auto;
+   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+   border: 0px solid rgba(0, 0, 0, 0);
+   height: 30px;
+   width: 6px;
+   border-radius: 10px;
+   background: #ee7a44;
    cursor: pointer;
-   background: transparent; 
+   -webkit-appearance: none;
+   margin-top: 0px;
+}
+
+input[type=range]::-moz-range-thumb {
+   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+   border: 0px solid rgba(0, 0, 0, 0);
+   height: 30px;
+   width: 6px;
+   border-radius: 10px;
+   background: #ee7a44;
+   cursor: pointer;
+}
+input[type=range]::-ms-track {
+   width: 100%;
+   height: 8.4px;
+   cursor: pointer;
+   background: transparent;
    border-color: transparent;
    color: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
-   -webkit-appearance: none;
-   margin-top:-3px;
-   border:none;
-   border-radius: 3px !important;
-   background: #c63b3b;
+input[type=range]::-ms-thumb {
+   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+   border: 0px solid rgba(0, 0, 0, 0);
+   height: 30px;
+   width: 6px;
+   border-radius: 10px;
+   background: #ee7a44;
    cursor: pointer;
-}
-input[type=range]::-webkit-slider-runnable-track {
-   width: 100%;
-   height: 10px;
-   cursor: pointer;
-   background: #d03939;
-   border-radius: 1px;
+   height: 8.4px;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
-   background: #d03939;
-}
-
-input[type=range]::-moz-range-track {
-   width: 100%;
-   height: 8px;
-   cursor: pointer;
-   background: #d03939;
-   border-radius: 1px;
-}
-
-input[type=range]::-ms-track {
-   width: 100%;
-   height: 8px;
-   cursor: pointer;
-   background: #d03939;
-   border-radius: 1px;
-}
-
-input[type=range]::-ms-fill-lower {
-   background: #FFFFFF;
-   margin-top:-10px;
-   border: 0.2px solid #010101;
-   border-radius: 2.6px;
-   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-input[type=range]:focus::-ms-fill-lower {
-   background: #FFFFFF;
-}
-
-input[type=range]::-ms-fill-upper {
-   background: #FFFFFF;
-   border: 0.2px solid #010101;
-   border-radius: 2.6px;
-   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-input[type=range]:focus::-ms-fill-upper {
-   background: #367ebd;
-}
-
-.meteor { 
+.meteor 
+{ 
    width:100px;
    height:100Px;
    background-color:white;
@@ -331,8 +310,10 @@ input[type=range]:focus::-ms-fill-upper {
 
 
 .space {
-   width:80vw;
-   min-height:100vh;
+   width:100vw;
+   height:100vh;
+   position:absolute;
+   z-index:3;
 }
 
 .elements_main {
@@ -346,79 +327,128 @@ input[type=range]:focus::-ms-fill-upper {
 
 #victim_count { color:red; }
 
-/************************
+.closed {display:none;}
 
-TUTO AREA
+.fill_data {
+   height:100%;
+   background-color:#ee7a44;
+   width:0px;
+   transition:300ms linear all;
+}
 
-************************/
+/* ANimation tuto */
 
 .tuto{
-    position: absolute;
-    z-index: 7;
-    top: 100vh;
-    right: 5vw;
-    height: 370px;
-    transform: translateY(-370px);
+   position: absolute;
+   z-index: 7;
+   top: 100vh;
+   right: 5vw;
+   height: 370px;
+   transform: translateY(-370px);
 }
 
 .tuto .perso{
-    width: 200px;
-    right: 70px;
-    bottom: 0px;
-    position: absolute;
-    z-index: 2;
+   width: 200px;
+   right: 70px;
+   bottom: 0px;
+   position: absolute;
+   z-index: 2;
 }
 
 .tuto .perso img{
-    width: 200px;
+   width: 200px;
 }
 
 .tuto .messagesTuto{
-    width: 300px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.6);
-    position: absolute;
-    z-index: 1;
-    right: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
+   width: 300px;
+   height: 150px;
+   background: rgba(255, 255, 255, 0.6);
+   position: absolute;
+   z-index: 1;
+   right: 0px;
+   padding-left: 15px;
+   padding-right: 15px;
 }
 
 .tuto .messagesTuto p{
-    color: black;
-    display: block;
-    font-size: 14px;
-    position: absolute;
-    z-index: 13px;
+   color: black;
+   display: block;
+   font-size: 14px;
+   position: absolute;
+   z-index: 13px;
 }
 
 .tuto .triangleTuto{
-    opacity: 0.6;
-    position: absolute;
-    z-index: 43;
+   opacity: 0.6;
+   position: absolute;
+   z-index: 43;
 }
 
 .tuto .triangleTuto img{
-    width: 60px;
-    height: 60px;
-    margin-top: 150px;
-    margin-left: 50px;
+   width: 60px;
+   height: 60px;
+   margin-top: 150px;
+   margin-left: 50px;
 }
 
 .tuto .understood{
-    width: 150px;
-    height: 40px;
-    border: 2px solid #51909D;
-    position: absolute;
-    z-index: 100;
-    right: 50%;
-    top: 100px;
-    transform: translateX(75px);
-    color: black;
-    font-size: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+   width: 150px;
+   height: 40px;
+   border: 2px solid #51909D;
+   position: absolute;
+   z-index: 100;
+   right: 50%;
+   top: 100px;
+   transform: translateX(75px);
+   color: black;
+   font-size: 15px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
 }
 
+#earth_div canvas{
+   display: block;
+   background: transparent;
+   width: 100vw;
+   height: 100vh;
+}
+
+
+#earth_div div.moon{
+   position: absolute;
+   top: 50%;
+   left: 48%;
+   transform: translate(-50px, -50px);
+   animation: turnAroundMoon 10s ease infinite;
+}
+
+@keyframes turnAroundMoon{
+   0%{transform: translateX(-250px); z-index:2;}
+   50%{transform: translateX(250px); z-index: 2;}
+   100%{transform: translateX(-250px); z-index:-10;}
+}
+
+#earth_div div.moon img{
+   width: 50px;
+}
+
+div.container > canvas{
+   display: block;
+   width:500px;
+   height:500px;
+   background:#000;
+   position: absolute;
+   z-index: 0;
+}
+.understood {
+   cursor: pointer ;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 700px){
+   
+   .tuto { display:none}
+
+}
